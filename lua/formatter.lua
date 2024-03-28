@@ -1,6 +1,26 @@
 local conform = require("conform")
 local conform_util = require("conform.util")
 
+local function organize_imports()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = { vim.api.nvim_buf_get_name(0) },
+		title = "",
+	}
+	vim.lsp.buf.execute_command(params)
+end
+
+local lspconfig = require("lspconfig")
+lspconfig.tsserver.setup({
+	capabilities = capabilities,
+	commands = {
+		OrganizeImports = {
+			organize_imports,
+			description = "Organize Imports",
+		},
+	},
+})
+
 conform.setup({
 	notify_on_error = true,
 	formatters_by_ft = {
@@ -35,20 +55,17 @@ conform.setup({
 			return
 		end
 
+		-- Organize Imports on file save
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			callback = organize_imports,
+		})
+
 		return {
 			timeout_ms = 1000,
 			lsp_fallback = true,
 		}
 	end,
 })
-
--- Format on save
--- vim.api.nvim_create_autocmd("BufWritePre", {
--- 	pattern = "*",
--- 	callback = function(args)
--- 		conform.format({ bufnr = args.buf })
--- 	end,
--- })
 
 -- ":Format" command
 vim.api.nvim_create_user_command("Format", function(args)
