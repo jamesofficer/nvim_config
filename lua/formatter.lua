@@ -55,13 +55,8 @@ conform.setup({
 			return
 		end
 
-		-- Organize Imports on file save
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			callback = organize_imports,
-		})
-
 		return {
-			timeout_ms = 1000,
+			timeout_ms = 1500,
 			lsp_fallback = true,
 		}
 	end,

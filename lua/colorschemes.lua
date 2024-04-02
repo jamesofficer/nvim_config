@@ -10,9 +10,9 @@ return {
 	},
 	{
 		"rebelot/kanagawa.nvim",
-		config = function()
-			vim.cmd.colorscheme("kanagawa-wave")
-		end,
+		-- config = function()
+		-- 	vim.cmd.colorscheme("kanagawa-wave")
+		-- end,
 	},
 	{
 		"Shatur/neovim-ayu",
@@ -22,7 +22,23 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 	},
+	{ "sainnhe/sonokai" },
+	{ "sainnhe/everforest" },
+	{ "EdenEast/nightfox.nvim" },
 	{
-		"sainnhe/sonokai",
+		"olimorris/onedarkpro.nvim",
+		priority = 1000, -- Ensure it loads first
+	},
+	{
+		"tiagovla/tokyodark.nvim",
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			vim.cmd.colorscheme("tokyonight-storm")
+		end,
 	},
 }
