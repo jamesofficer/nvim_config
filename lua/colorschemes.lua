@@ -1,4 +1,9 @@
 return {
+    { "AstroNvim/astrotheme" },
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000
+	},
 	{
 		"loctvl842/monokai-pro.nvim",
 		config = function()

@@ -2,7 +2,13 @@ return {
 	"echasnovski/mini.files",
 	version = false,
 	config = function()
-		require("mini.files").setup()
-		vim.keymap.set("n", "<leader>e", "<CMD>:lua MiniFiles.open()<CR>", { desc = "Fil[e] Browser" })
+		local minifiles = require("mini.files")
+
+        vim.keymap.set("n", "<leader>e", function()
+            local currentBuffer = vim.api.nvim_buf_get_name(0)
+            MiniFiles.open(currentBuffer)
+        end, { desc = "Fil[e] Browser" })
+
+        minifiles.setup();
 	end,
 }
