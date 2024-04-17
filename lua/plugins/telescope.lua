@@ -8,12 +8,14 @@ return {
 		local actions = require("telescope.actions")
 
 		vim.keymap.set("n", "<leader>r", builtin.resume, { desc = "[R]esume last search" })
-
 		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 		vim.keymap.set("n", "<leader>sh", function()
-            builtin.find_files({ no_ignore = true })
+            builtin.find_files({
+                hidden = true,
+                no_ignore = true,
+                file_ignore_patterns = { "node_modules", ".git", ".DS_Store", ".cache" }
+            })
         end, { desc = "[S]earch [H]idden Files" })
-
 		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
 		vim.keymap.set("n", "<leader>sp", builtin.help_tags, { desc = "[S]earch Hel[p]" })
 		vim.keymap.set("n", "<leader>sr", builtin.oldfiles, { desc = "[S]earch [R]ecent" })
