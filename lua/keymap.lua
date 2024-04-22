@@ -26,6 +26,12 @@ vim.keymap.set("i", "<Right>", "<c-o>:echo 'Use l'<CR>")
 vim.keymap.set("i", "<Up>", "<c-o>:echo 'Use k'<CR>")
 vim.keymap.set("i", "<Down>", "<c-o>:echo 'Use j'<CR>")
 
+-- Splits
+vim.keymap.set("n", "<leader>tv", "<CMD>vsplit<CR>", { desc = "Open [V]ertical Split" })
+vim.keymap.set("n", "<leader>th", "<CMD>split<CR>", { desc = "Open [H]orizontal Split" })
+vim.keymap.set("n", "<leader>td", "<CMD>:q<CR>", { desc = "[D]elete Split" })
+vim.keymap.set("n", "<leader>tt", "<C-w><C-w>", { desc = "Toggle Spli[t]" })
+
 -- LSP Keybindings
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP Actions",

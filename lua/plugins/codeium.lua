@@ -6,6 +6,10 @@ return {
 
 		vim.keymap.set({ "i", "n" }, "<C-.>", function()
 			return vim.fn["codeium#Accept"]()
+		end, { expr = true })  
+
+		vim.keymap.set({ "i", "n" }, "<C-Enter>", function()
+			return vim.fn["codeium#Accept"]()
 		end, { expr = true })
 
 		vim.keymap.set({ "i", "n" }, "<c-;>", function()
