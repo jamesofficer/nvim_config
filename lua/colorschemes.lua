@@ -1,5 +1,4 @@
 return {
-    { "AstroNvim/astrotheme" },
 	{
 		"ellisonleao/gruvbox.nvim",
 		priority = 1000
@@ -28,7 +27,12 @@ return {
 		priority = 1000,
 	},
 	{ "sainnhe/sonokai" },
-	{ "sainnhe/everforest" },
+	{ 
+        "sainnhe/everforest",
+        config = function()
+            vim.cmd.colorscheme("everforest")
+        end
+    },
 	{ "EdenEast/nightfox.nvim" },
 	{
 		"olimorris/onedarkpro.nvim",
@@ -42,8 +46,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {},
-		config = function()
-			vim.cmd.colorscheme("tokyonight-storm")
-		end,
+		-- config = function()
+		-- 	vim.cmd.colorscheme("tokyonight-storm")
+		-- end,
 	},
 }
