@@ -38,6 +38,7 @@ require("lazy").setup({
 	require("plugins/mini_pairs"),
 	require("plugins/arrow"),
 	require("plugins/web_dev_icons"),
+	require("plugins/smart-open"),
 	-- require("plugins/which_key"),
 	-- require("plugins/gitblame"),
 	-- require("plugins/comment"),

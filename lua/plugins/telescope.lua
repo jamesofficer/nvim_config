@@ -8,7 +8,7 @@ return {
 		local actions = require("telescope.actions")
 
 		vim.keymap.set("n", "<leader>r", builtin.resume, { desc = "[R]esume last search" })
-		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+		vim.keymap.set("n", "<leader>sf", "<cmd>Telescope smart_open<cr>", { desc = "[S]earch [F]iles" })
 		vim.keymap.set("n", "<leader>sh", function()
             builtin.find_files({
                 hidden = true,
