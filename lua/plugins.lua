@@ -39,10 +39,11 @@ require("lazy").setup({
 	require("plugins/arrow"),
 	require("plugins/web_dev_icons"),
 	require("plugins/smart-open"),
+	require("plugins/pint"),
 	-- require("plugins/which_key"),
 	-- require("plugins/gitblame"),
 	-- require("plugins/comment"),
 	-- require("plugins/no_neck_pain"),
-	-- require("plugins/neodev"),
+	require("plugins/neodev"),
 	-- require("plugins/wtf"),
 })
