@@ -9,6 +9,8 @@ return {
 
 		vim.keymap.set("n", "<leader>r", builtin.resume, { desc = "[R]esume last search" })
 
+		vim.keymap.set("n", "<leader>sb", builtin.current_buffer_fuzzy_find, { desc = "[S]earch Current [B]uffer" })
+
 		vim.keymap.set("n", "<leader>sf", function ()
           require("telescope").extensions.smart_open.smart_open({
             cwd_only = true,
