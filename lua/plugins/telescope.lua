@@ -8,7 +8,16 @@ return {
 		local actions = require("telescope.actions")
 
 		vim.keymap.set("n", "<leader>r", builtin.resume, { desc = "[R]esume last search" })
-		vim.keymap.set("n", "<leader>sf", "<cmd>Telescope smart_open<cr>", { desc = "[S]earch [F]iles" })
+
+		vim.keymap.set("n", "<leader>sb", builtin.current_buffer_fuzzy_find, { desc = "[S]earch Current [B]uffer" })
+
+		vim.keymap.set("n", "<leader>sf", function ()
+          require("telescope").extensions.smart_open.smart_open({
+            cwd_only = true,
+            filename_first = false,
+          })
+        end, { desc = "[S]earch [F]iles" })
+
 		vim.keymap.set("n", "<leader>sh", function()
             builtin.find_files({
                 hidden = true,
