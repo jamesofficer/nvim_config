@@ -4,8 +4,10 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 vim.keymap.set("n", "<C-s>", "<CMD>:w<CR>", { desc = "Save file" })
 
-vim.keymap.set("n", "K", "6k", { desc = "Move down 6 lines" })
-vim.keymap.set("n", "J", "6j", { desc = "Move up 6 lines" })
+vim.keymap.set("n", "K", "6k", { desc = "Move up 6 lines" })
+vim.keymap.set("n", "J", "6j", { desc = "Move down 6 lines" })
+vim.keymap.set("n", "<S-Up>", "6k", { desc = "Move down 6 lines" })
+vim.keymap.set("n", "<S-Down>", "6j", { desc = "Move up 6 lines" })
 
 vim.keymap.set("n", "<leader>dm", vim.diagnostic.open_float, { desc = "Open floating [D]iagnostic [M]essage" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
@@ -16,21 +18,24 @@ vim.keymap.set("n", "<leader>x", "<CMD>bp<bar>sp<bar>bn<bar>bd<CR>", { desc = "C
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]ename" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
 
--- No Arrow Keys
-vim.keymap.set("n", "<Left>", ":echo 'Use h'<CR>")
-vim.keymap.set("n", "<Right>", ":echo 'Use l'<CR>")
-vim.keymap.set("n", "<Up>", ":echo 'Use k'<CR>")
-vim.keymap.set("n", "<Down>", ":echo 'Use j'<CR>")
-vim.keymap.set("i", "<Left>", "<c-o>:echo 'Use h'<CR>")
-vim.keymap.set("i", "<Right>", "<c-o>:echo 'Use l'<CR>")
-vim.keymap.set("i", "<Up>", "<c-o>:echo 'Use k'<CR>")
-vim.keymap.set("i", "<Down>", "<c-o>:echo 'Use j'<CR>")
+-- -- No Arrow Keys
+-- vim.keymap.set("n", "<Left>", ":echo 'Use h'<CR>")
+-- vim.keymap.set("n", "<Right>", ":echo 'Use l'<CR>")
+-- vim.keymap.set("n", "<Up>", ":echo 'Use k'<CR>")
+-- vim.keymap.set("n", "<Down>", ":echo 'Use j'<CR>")
+-- vim.keymap.set("i", "<Left>", "<c-o>:echo 'Use h'<CR>")
+-- vim.keymap.set("i", "<Right>", "<c-o>:echo 'Use l'<CR>")
+-- vim.keymap.set("i", "<Up>", "<c-o>:echo 'Use k'<CR>")
+-- vim.keymap.set("i", "<Down>", "<c-o>:echo 'Use j'<CR>")
 
 -- Splits
 vim.keymap.set("n", "<leader>tv", "<CMD>vsplit<CR>", { desc = "Open [V]ertical Split" })
 vim.keymap.set("n", "<leader>th", "<CMD>split<CR>", { desc = "Open [H]orizontal Split" })
 vim.keymap.set("n", "<leader>td", "<CMD>:q<CR>", { desc = "[D]elete Split" })
 vim.keymap.set("n", "<leader>tt", "<C-w><C-w>", { desc = "Toggle Spli[t]" })
+
+-- UI
+vim.keymap.set("n", "<leader>ut", "<CMD>:Telescope colorscheme<CR>", { desc = "[T]hemes" })
 
 -- LSP Keybindings
 vim.api.nvim_create_autocmd("LspAttach", {
